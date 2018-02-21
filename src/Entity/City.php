@@ -25,51 +25,51 @@ class City
 
     /**
      * One City has Many ContactInfo.
-     * @ORM\OneToMany(targetEntity="ContactInfo", mappedBy="residenceCityId")
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="residenceCityId")
      */
-    private $contactInfos;
+    private $clientsResidences;
 
     /**
      * One City has Many WorkingInfo.
-     * @ORM\OneToMany(targetEntity="WorkingInfo", mappedBy="citizenshipId")
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="citizenshipId")
      */
-    private $workingInfos;
+    private $clientsCitizenships;
 
     public function __construct() {
-        $this->contactInfos = new ArrayCollection();
-        $this->workingInfos = new ArrayCollection();
+        $this->clientsResidences = new ArrayCollection();
+        $this->clientsCitizenships = new ArrayCollection();
     }
 
     /**
      * @return mixed
      */
-    public function getContactInfos()
+    public function getClientsResidences()
     {
-        return $this->contactInfos;
+        return $this->clientsResidences;
     }
 
     /**
      * @param mixed $contactInfos
      */
-    public function setContactInfos($contactInfos)
+    public function setClientsResidences($clientsResidences)
     {
-        $this->contactInfos = $contactInfos;
+        $this->clientsResidences = $clientsResidences;
     }
 
     /**
      * @return mixed
      */
-    public function getWorkingInfos()
+    public function getClientsCitizenships()
     {
-        return $this->workingInfos;
+        return $this->clientsCitizenships;
     }
 
     /**
      * @param mixed $workingInfos
      */
-    public function setWorkingInfos($workingInfos)
+    public function setClientsCitizenships($clientsCitizenships)
     {
-        $this->workingInfos = $workingInfos;
+        $this->clientsCitizenships = $clientsCitizenships;
     }
 
     /**

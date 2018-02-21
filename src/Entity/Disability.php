@@ -24,29 +24,30 @@ class Disability
     private $name;
 
     /**
-     * One Disability has Many WorkingInfos.
-     * @ORM\OneToMany(targetEntity="WorkingInfo", mappedBy="disabilityId")
+     * One Disability has Many Clients.
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="disabilityId")
      */
-    private $workingInfos;
+    private $clients;
+
 
     /**
      * @return mixed
      */
-    public function getWorkingInfos()
+    public function getClients()
     {
-        return $this->workingInfos;
+        return $this->clients;
     }
 
     /**
-     * @param mixed $workingInfos
+     * @param mixed $clients
      */
-    public function setWorkingInfos($workingInfos)
+    public function setClients($clients)
     {
-        $this->workingInfos = $workingInfos;
+        $this->clients = $clients;
     }
 
     public function __construct() {
-        $this->workingInfos = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     /**

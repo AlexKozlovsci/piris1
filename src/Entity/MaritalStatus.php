@@ -24,30 +24,30 @@ class MaritalStatus
     private $name;
 
     /**
-     * One MaritalStatus has Many WorkingInfos.
-     * @ORM\OneToMany(targetEntity="WorkingInfo", mappedBy="maritalStatusId")
+     * One MaritalStatus has Many Clients.
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="maritalStatusId")
      */
-    private $workingInfos;
+    private $clients;
 
 
     /**
      * @return mixed
      */
-    public function getWorkingInfos()
+    public function getClients()
     {
-        return $this->workingInfos;
+        return $this->clients;
     }
 
     /**
-     * @param mixed $workingInfos
+     * @param mixed $clients
      */
-    public function setWorkingInfos($workingInfos)
+    public function setClients($clients)
     {
-        $this->workingInfos = $workingInfos;
+        $this->clients = $clients;
     }
 
     public function __construct() {
-        $this->workingInfos = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     /**

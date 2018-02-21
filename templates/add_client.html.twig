@@ -1,0 +1,321 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ action }} client{% endblock %}
+
+{% block main %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <h3 class="text-center">{{ action }} client</h3>
+                {{ form_start(form) }}
+
+                <div class="form-group">
+                    <label for="surname">Surname(Only letters): </label>
+                    {{
+                        form_widget(form.surname, {'attr': {
+                            'class': 'form-control',
+                            'id': 'surname'
+                        }})
+                    }}
+                    {% if form_errors(form.surname)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.surname) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name(Only letters): </label>
+                    {{
+                    form_widget(form.name, {'attr': {
+                        'class': 'form-control',
+                        'id': 'name'
+                    }})
+                    }}
+                    {% if form_errors(form.name)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.name) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="patronymic">Patronymic(Only letters): </label>
+                    {{
+                    form_widget(form.patronymic, {'attr': {
+                        'class': 'form-control',
+                        'id': 'patronymic'
+                    }})
+                    }}
+                    {% if form_errors(form.patronymic)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.patronymic) }}</h6>
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    <label for="birthday">Birthday: </label>
+                    {{
+                    form_widget(form.birthday, {'attr': {
+                        'id': 'birthday'
+                    }})
+                    }}
+                    {% if form_errors(form.birthday)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.birthday) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="passport-series">Passport series(Only 2 big letter): </label>
+                    {{
+                    form_widget(form.passportSeries, {'attr': {
+                        'class': 'form-control',
+                        'id': 'passport-series'
+                    }})
+                    }}
+                    {% if form_errors(form.passportSeries)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.passportSeries) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="passport-number">Passport number(Only 7 digits): </label>
+                    {{
+                    form_widget(form.passportNumber, {'attr': {
+                        'class': 'form-control',
+                        'id': 'passport-number'
+                    }})
+                    }}
+                    {% if form_errors(form.passportNumber)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.passportNumber) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="issued-by">Issued by: </label>
+                    {{
+                    form_widget(form.issuedBy, {'attr': {
+                        'class': 'form-control',
+                        'id': 'issued-by'
+                    }})
+                    }}
+                    {% if form_errors(form.issuedBy)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.issuedBy) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="issued-date">Issued date: </label>
+                    {{
+                    form_widget(form.issuedDate, {'attr': {
+                        'id': 'issued-date'
+                    }})
+                    }}
+                    {% if form_errors(form.issuedDate)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.issuedDate) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="identity-number">Identity number(format 0000000A000AA0): </label>
+                    {{
+                    form_widget(form.identityNumber, {'attr': {
+                        'class': 'form-control',
+                        'id': 'identity-number'
+                    }})
+                    }}
+                    {% if form_errors(form.identityNumber)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.identityNumber) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="birth-place">Birth place: </label>
+                    {{
+                    form_widget(form.birthPlace, {'attr': {
+                        'class': 'form-control',
+                        'id': 'birth-place'
+                    }})
+                    }}
+                    {% if form_errors(form.birthPlace)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.birthPlace) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="residence-city">Residence city: </label>
+                    {{
+                    form_widget(form.residenceCityId, {'attr': {
+                        'class': 'form-control',
+                        'id': 'residence-city'
+                    }})
+                    }}
+                    {% if form_errors(form.residenceCityId)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.residenceCityId) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="residence-address">Residence address: </label>
+                    {{
+                    form_widget(form.residenceAddress, {'attr': {
+                        'class': 'form-control',
+                        'id': 'residence-address'
+                    }})
+                    }}
+                    {% if form_errors(form.residenceAddress)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.residenceAddress) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="home-phone">Home phone(Format like +375(29)0000000): </label>
+                    {{
+                    form_widget(form.homePhone, {'attr': {
+                        'class': 'form-control',
+                        'id': 'home-phone'
+                    }})
+                    }}
+                    {% if form_errors(form.homePhone)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.homePhone) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile-phone">Mobile phone(Format like +375(29)0000000): </label>
+                    {{
+                    form_widget(form.mobilePhone, {'attr': {
+                        'class': 'form-control',
+                        'id': 'mobile-phone'
+                    }})
+                    }}
+                    {% if form_errors(form.mobilePhone)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.mobilePhone) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    {{
+                    form_widget(form.email, {'attr': {
+                        'class': 'form-control',
+                        'id': 'email'
+                    }})
+                    }}
+                    {% if form_errors(form.email)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.email) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="working-place">Working place: </label>
+                    {{
+                    form_widget(form.workingPlace, {'attr': {
+                        'class': 'form-control',
+                        'id': 'working-place'
+                    }})
+                    }}
+                    {% if form_errors(form.workingPlace)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.workingPlace) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position: </label>
+                    {{
+                    form_widget(form.position, {'attr': {
+                        'class': 'form-control',
+                        'id': 'position'
+                    }})
+                    }}
+                    {% if form_errors(form.position)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.position) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="marital-status">Marital status: </label>
+                    {{
+                    form_widget(form.maritalStatusId, {'attr': {
+                        'class': 'form-control',
+                        'id': 'marital-status'
+                    }})
+                    }}
+                    {% if form_errors(form.maritalStatusId)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.maritalStatusId) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="citizenship">Citizenship: </label>
+                    {{
+                    form_widget(form.citizenshipId, {'attr': {
+                        'class': 'form-control',
+                        'id': 'citizenship'
+                    }})
+                    }}
+                    {% if form_errors(form.citizenshipId)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.citizenshipId) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="disability">Disability: </label>
+                    {{
+                    form_widget(form.disabilityId, {'attr': {
+                        'class': 'form-control',
+                        'id': 'disability'
+                    }})
+                    }}
+                    {% if form_errors(form.disabilityId)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.disabilityId) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="monthly-income">Monthly income(Only digits): </label>
+                    {{
+                    form_widget(form.monthlyIncome, {'attr': {
+                        'class': 'form-control',
+                        'id': 'monthly-income'
+                    }})
+                    }}
+                    {% if form_errors(form.monthlyIncome)|length > 0 %}
+                        <h6 class="text-center alert alert-danger mdl-cell mdl-cell--6-col mdl-cell--3-offset">{{ form_errors(form.monthlyIncome) }}</h6>
+                    {% endif %}
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                    {{
+                    form_widget(form.pensioner, {'attr': {
+                        'id': 'pensioner',
+                        'type': 'checkbox'
+                    }})
+                    }}Pensioner
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                    {{
+                    form_widget(form.reservist, {'attr': {
+                        'id': 'reservist',
+                        'type': 'checkbox'
+                    }})
+                    }}Reservist
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    {{
+                    form_widget(form.save, {'attr': {
+                        'class': 'form-control btn btn-success',
+                        'id': 'save'
+                    }})
+                    }}
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

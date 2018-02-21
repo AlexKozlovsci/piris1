@@ -13,16 +13,8 @@ class ClientRepository extends ServiceEntityRepository
         parent::__construct($registry, Client::class);
     }
 
-    /*
-    public function findBySomething($value)
+    public function findAllWithSort()
     {
-        return $this->createQueryBuilder('c')
-            ->where('c.something = :value')->setParameter('value', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->findBy(array(), array('surname' => 'ASC'));
     }
-    */
 }

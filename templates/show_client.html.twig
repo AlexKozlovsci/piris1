@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ client.name }}{% endblock %}
+
+{% block main %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="text-center"><b>{{ client.surname }}  {{ client.name }}  {{ client.patronymic }}</b></h2>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h4><b>Birthday:</b> {{ client.birthday|date("d-m-Y") }}</h4>
+                        <h4><b>Passport series:</b> {{ client.passportSeries }}</h4>
+                        <h4><b>Passport Number:</b> {{ client.passportNumber }}</h4>
+                        <h4><b>Issued by:</b> {{ client.issuedBy }}</h4>
+                        <h4><b>Issued date:</b> {{ client.issuedDate|date("d-m-Y") }}</h4>
+                        <h4><b>Identity number:</b> {{ client.identityNumber }}</h4>
+                        <h4><b>Birth place:</b> {{ client.birthPlace }}</h4>
+                        <h4><b>Residence city:</b> {{ client.residenceCityId.name }}</h4>
+                        <h4><b>Residence address:</b> {{ client.residenceAddress }}</h4>
+                        <h4><b>Home phone:</b> {{ client.homePhone }}</h4>
+                        <h4><b>Mobile phone:</b> {{ client.mobilePhone }}</h4>
+                        <h4><b>Email:</b> {{ client.email }}</h4>
+                        <h4><b>Working place:</b> {{ client.workingPlace }}</h4>
+                        <h4><b>Marital status:</b> {{ client.maritalStatusId.name }}</h4>
+                        <h4><b>Citizenship:</b> {{ client.citizenshipId.name }}</h4>
+                        <h4><b>Disability:</b> {{ client.disabilityId.name }}</h4>
+                        <h4><b>Monthly income:</b> {{ client.monthlyIncome }}</h4>
+                        {% if client.pensioner == true %}
+                            <h4><b>Pensioner:</b> Yes</h4>
+                        {% else %}
+                            <h4><b>Pensioner:</b> No</h4>
+                        {% endif %}
+                        {% if client.reservist == true %}
+                            <h4><b>Reservist:</b> Yes</h4>
+                        {% else %}
+                            <h4><b>Reservist:</b> No</h4>
+                        {% endif %}
+                        <a href="{{ path('edit_client', {'id': client.id}) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ path('delete_client', {'id': client.id}) }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
