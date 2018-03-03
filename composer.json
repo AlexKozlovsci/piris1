@@ -23,7 +23,8 @@
         "symfony/validator": "^3.4",
         "symfony/web-link": "^3.4",
         "symfony/webpack-encore-pack": "*",
-        "symfony/yaml": "^3.4"
+        "symfony/yaml": "^3.4",
+        "twbs/bootstrap": "^4.0"
     },
     "require-dev": {
         "symfony/browser-kit": "^3.4",
@@ -74,6 +75,6 @@
             "id": "",
             "allow-contrib": false
         },
-        "symfony.id": "01C60PCCPSENMT2Z0E585X9PN8"
+        "symfony.id": "01C6MDEQXF25CJV84PEY72W7XW"
     }
 }

@@ -6,6 +6,7 @@ use App\Entity\Client;
 use App\Form\ClientType;
 use App\Service\ClientManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -34,8 +35,13 @@ class MainController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $clientManager->saveClient($client);
-            return $this->redirectToRoute('clients');
+            $now = new \DateTime();
+            if ($client->getBirthday()->format('Y-m-d') >= $now->format('Y-m-d')){
+                $form->get('birthday')->addError(new FormError('Wrong date'));
+            } else {
+                $clientManager->saveClient($client);
+                return $this->redirectToRoute('clients');
+            }
         }
         return $this->render('add_client.html.twig', [
             'action' => 'Add',
@@ -70,6 +76,7 @@ class MainController extends AbstractController
             $clientManager->saveClient($client);
             return $this->redirectToRoute('clients');
         }
+
         return $this->render('add_client.html.twig', [
             'action' => 'Edit',
             'client' => $client,
@@ -84,6 +91,7 @@ class MainController extends AbstractController
     public function deleteClient(int $id, ClientManager $clientManager)
     {
         $clientManager->deleteClient($id);
+
         return $this->redirectToRoute('clients');
     }
 }
